@@ -1,6 +1,7 @@
 {% load meta_extra %}
 {% if meta %}
     {% autoescape off %}
+    {% if meta.title %}{% title_prop meta.title %}{% endif %}
 	{% if meta.description %}{% meta 'description' meta.description %}{% endif %}
 	{% if meta.keywords %}{% meta_list 'keywords' meta.keywords %}{% endif %}
 	{% if meta.use_og %}
@@ -47,6 +48,7 @@
 		{% if meta.gplus_description %}{% googleplus_prop 'description' meta.gplus_description %}{% endif %}
 		{% if meta.image %}{% googleplus_prop 'image' meta.image %}{% endif %}
 	{% endif %}
-    {% custom_meta_extras meta.extra_custom_props %}
+    {% if meta.extra_props %}{% meta_extras meta.extra_props %}{% endif %}
+    {% if meta.extra_custom_props %}{% custom_meta_extras meta.extra_custom_props %}{% endif %}
     {% endautoescape %}
 {% endif %}
