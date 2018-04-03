@@ -89,6 +89,8 @@ def get_page_meta(page, language):
             'twitter_author': meta_settings.TWITTER_AUTHOR,
             'gplus_type': meta_settings.GPLUS_TYPE,
             'gplus_author': meta_settings.GPLUS_AUTHOR,
+            'extra_props' : meta_settings.EXTRA_PROPS,
+            'extra_custom_props' : meta_settings.EXTRA_CUSTOM_PROPS
         }
         try:
             pagemeta = page.pagemeta
